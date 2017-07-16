@@ -25,5 +25,13 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "merge-stream": "^1.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betsiana/Laboratoria-news.git"
+  },
+  "bugs": {
+    "url": "https://github.com/betsiana/Laboratoria-news/issues"
+  },
+  "homepage": "https://github.com/betsiana/Laboratoria-news#readme"
 }

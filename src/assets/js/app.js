@@ -12,6 +12,8 @@ const render = (root) => {
     container.append(Row3());
     container.append(Educacion());
     container.append(Row4());
+    container.append(Opinion());
+    container.append(Row5());
 
     root.append(container);
 }

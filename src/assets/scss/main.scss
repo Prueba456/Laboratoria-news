@@ -39,6 +39,12 @@ $min-large:768px;
   margin-top: 20px;
   height: 120px;
 }
+.separacion{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
 ul li a{
   @media(min-width:$min-large){
     color:white !important;
@@ -92,7 +98,6 @@ hr{
   }
 }
 
-
 .text-news{
   margin: 20px;
   font-size: 30px;
@@ -119,6 +124,7 @@ img{
   width: auto;
 }
 .info-plomo{
+  position: relative;
   height: 100%;
   float: right;
   text-transform: capitalize;
@@ -150,4 +156,60 @@ img{
   height: 100px;
   overflow: hidden;
   margin-top: 15px;
+  @media(min-width: $min-large){
+  margin-top: 30px;
+  }
+}
+.padding-r{
+  padding-right: 0px;
+  @media(min-width: $min-large){
+    padding-right: 15px;
+  }
+}
+
+.padding-l{
+  padding-left: 0px;
+  @media(min-width: $min-large){
+    padding-left: 15px;
+  }
+}
+
+.overflow-image{
+  overflow: hidden;
+  height: 250px;
+  @media(min-width: $min-large){
+    overflow:visible;
+    height: 100%;
+  }
+}
+
+.icon-video{
+  display: inline-block;
+  position: absolute;
+  width: 70px;
+  right: 40px;
+  top: 20px;
+}
+
+.logohoy{
+  width: 80px;
+  text-align: center;
+  background-color: #F7B617;
+  height: 40px;
+  padding: 10px;
+  color: #2B2B2B;
+  position: absolute;
+  top: -25px;
+}
+.margin-top-img{
+  margin-top: 30px;
+  @media(min-width: $min-large){
+    margin-top: 0px;
+  }
+}
+.margin-top-15{
+ margin-top: 15px;
+ @media (min-width: $min-large){
+   margin-top: 0;
+ }
 }
