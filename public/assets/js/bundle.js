@@ -2875,6 +2875,52 @@ const Row5 = () =>{
   return row;
 }
 
+const Footer = () => {
+  const footer = $('<div class="footer row"></div>');
+  const footerxs = $('<div class="col-xs-12 col-md-4"></div>');
+  const footerxsflex = $('<div class="flex"></div>');
+    const imagen = $('<img src="assets/img/logo-footer.png" alt="">');
+    const texto = $('<p class="footer-text-xs">© Editado por Laboratoria Av. José Pardo #601 Lima 1 Perú Copyright ©Laboratoria.la Todos los derechos reservados.</p>');
+    const linea = $('<hr class="lineablanca">');
+    const textocorto = $('<span>Ver más</span>');
+
+  const footermd = $('<div class="footermd hidden-xs col-md-4"></div>');
+  const titulo = $('<h4>DIRECTOR GENERAL:</h4>');
+  const textomd = $('<p>Francisco Miró Quesada Cantuarias</p>');
+  const titulo1 = $('<h4>DIRECTOR PERIODÍSTICO:</h4>');
+  const textomd1 = $('<p>Fernando Berckemeyer Olaechea</p>');
+  const titulo2 = $('<h4>SUSCRIPCIONES</h4>');
+  const textomd2 = $('<p>suscriptores@comercio.com.pe</p>');
+  const titulo3 = $('<h4>PUBLICIDAD ONLINE</h4>');
+  const textomd3 = $('<p>fonoavisos@comercio.com.pe</p>');
+  const titulo4 = $('<h4>CLUB EL COMERCIO</h4>');
+  const textomd4 = $('<p>clubelcomercio@comercio.com.pe</p>');
+  const textomd41 = $('<p>Compromiso de Autorregulación Comercial</p>');
+  const footermd2 = $('<div class="footermd2 hidden-xs col-md-4"></div>');
+  const enlace1 = $('<h4>TÉRMINOS Y CONDICIONES DE USO</h4>');
+  const enlace2 = $('<h4>TRABAJO CON NOSOTROS</h4>');
+  const enlace3 = $('<h4>LIBRO DE RECLAMACIONES</h4>');
+  const enlace4 = $('<h4>SEDES PRINCIPALES</h4>');
+  const enlace5 = $('<h4>POLÍTICAS DE PRIVACIDAD</h4>');
+  const iconos = $('<div class="iconos-footer"></div>');
+    const span =$('<span>SÍGUENOS</span>');
+    const iconfac =$('<img src="assets/img/fb.png">');
+    const iconin =$('<img src="assets/img/in.png">');
+    const icontw =$('<img src="assets/img/tw.png">');
+
+
+    footer.append(footerxs);
+    footerxs.append(footerxsflex);
+    footerxsflex.append(imagen, texto, linea, textocorto);
+    footer.append(footermd);
+    footermd.append(titulo, textomd, titulo1, textomd1, titulo2, textomd2, titulo3, textomd3, titulo4, textomd4, textomd41);
+    footer.append(footermd2);
+    footermd2.append(enlace1, enlace2, enlace3, enlace4, enlace5, iconos);
+    iconos.append(span, iconfac, iconin, icontw);
+
+    return footer;
+}
+
 const render = (root) => {
     root.empty();
     const container = $('<div class=""></div>');
@@ -2891,6 +2937,7 @@ const render = (root) => {
     container.append(Row4());
     container.append(Opinion());
     container.append(Row5());
+    container.append(Footer());
 
     root.append(container);
 }
