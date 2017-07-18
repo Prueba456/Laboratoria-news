@@ -2422,7 +2422,7 @@ const NavBar = () =>{
   return navbarlarge;
 }
 
-const Principal = () =>{
+const Principal = (update) =>{
   const principal = $('<div class="principal"></div>');
   const divVisible = $('<div class="visible-xs"></div>');
   const h2 = $('<h2>LO ÚLTIMO</h2>');
@@ -2437,7 +2437,13 @@ const Principal = () =>{
   principal.append(imagen);
   principal.append(textoNew);
   textoNew.append(h1, p);
-  return principal;
+
+    imagen.click(function(){
+     state.status= 1;
+     console.log(state.status);
+     update();
+    });
+    return principal;
 }
 
 const Row1 = () =>{
@@ -2921,12 +2927,32 @@ const Footer = () => {
     return footer;
 }
 
+const Descripcion =()=> {
+  const notiaInfo =$('<div class="noticia-info"></div>');
+    const titulo = $('<div class="hidden-xs titulo"></div>');
+      const h2 = $('<h2>EDUCACIÓN</h2>');
+      const hr = $('<hr>');
+    notiaInfo.append(titulo);
+      titulo.append(h2, hr);
+    const row = $('<div class="row"></div>');
+    const columnLeft = $('<div class=" col-xs-12 col-md-12 col-lg-12"></div>');
+    const h1 = $('<h1>'+state.dataNews[0].title+'</h1>');
+    const p = $('<p class="texto-descrip">'+state.dataNews[0].brief+'</p>');
+    notiaInfo.append(row);
+    row.append(columnLeft);
+    columnLeft.append(h1, p);
+    console.log(state.dataNews[0].brief);
+
+  return notiaInfo;
+}
+
 const render = (root) => {
     root.empty();
     const container = $('<div class=""></div>');
     container.append(Header());
     container.append(NavBar());
-    container.append(Principal());
+    if (state.status==0) {
+    container.append(Principal(_=>{ render(root) }));
     container.append(Row1());
     container.append(Mundo())
     container.append(Row2());
@@ -2937,6 +2963,10 @@ const render = (root) => {
     container.append(Row4());
     container.append(Opinion());
     container.append(Row5());
+   }else if(state.status==1){
+   container.append(Descripcion());
+
+    }
     container.append(Footer());
 
     root.append(container);
@@ -2946,7 +2976,8 @@ const state = {
     dataNews: null,
     imag: null,
     informacion: null,
-    descripcion: null
+    descripcion: null,
+    status: 0,
 };
 
 $(_ => {

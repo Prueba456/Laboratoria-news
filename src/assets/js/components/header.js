@@ -43,7 +43,7 @@ const NavBar = () =>{
   return navbarlarge;
 }
 
-const Principal = () =>{
+const Principal = (update) =>{
   const principal = $('<div class="principal"></div>');
   const divVisible = $('<div class="visible-xs"></div>');
   const h2 = $('<h2>LO ÚLTIMO</h2>');
@@ -58,7 +58,13 @@ const Principal = () =>{
   principal.append(imagen);
   principal.append(textoNew);
   textoNew.append(h1, p);
-  return principal;
+
+    imagen.click(function(){
+     state.status= 1;
+     console.log(state.status);
+     update();
+    });
+    return principal;
 }
 
 const Row1 = () =>{
@@ -540,4 +546,23 @@ const Footer = () => {
     iconos.append(span, iconfac, iconin, icontw);
 
     return footer;
+}
+
+const Descripcion =()=> {
+  const notiaInfo =$('<div class="noticia-info"></div>');
+    const titulo = $('<div class="hidden-xs titulo"></div>');
+      const h2 = $('<h2>EDUCACIÓN</h2>');
+      const hr = $('<hr>');
+    notiaInfo.append(titulo);
+      titulo.append(h2, hr);
+    const row = $('<div class="row"></div>');
+    const columnLeft = $('<div class=" col-xs-12 col-md-12 col-lg-12"></div>');
+    const h1 = $('<h1>'+state.dataNews[0].title+'</h1>');
+    const p = $('<p class="texto-descrip">'+state.dataNews[0].brief+'</p>');
+    notiaInfo.append(row);
+    row.append(columnLeft);
+    columnLeft.append(h1, p);
+    console.log(state.dataNews[0].brief);
+
+  return notiaInfo;
 }
