@@ -2941,7 +2941,25 @@ const Descripcion =()=> {
     notiaInfo.append(row);
     row.append(columnLeft);
     columnLeft.append(h1, p);
+
     console.log(state.dataNews[0].brief);
+    const row1 = $('<div class="row"></div>');
+    const column1 = $('<div class=" col-xs-12 col-md-12 col-lg-12"></div>');
+    const usuaria = $('<div class="contenedor-imagen"></div>');
+    // console.log(state.dataNews[0].author);
+    // console.log(state.dataNews[0]["published-date"]);
+    const imagenUsuaria = $('<img src="assets/img/'+state.dataNews[0].author.picture+'">');
+    const datos = $('<div></div>');
+    const nombre = $('<h4>'+state.dataNews[0].author.name+'</h4>');
+    const fecha = $('<h4>'+state.dataNews[0]["published-date"]+'</h4>');
+    const twitter = $('<h4>'+state.dataNews[0].author.user+'</h4>');
+
+    notiaInfo.append(row1);
+    row1.append(column1);
+    column1.append(usuaria);
+    usuaria.append(imagenUsuaria);
+    column1.append(datos);
+    datos.append(nombre, fecha, twitter);
 
   return notiaInfo;
 }
